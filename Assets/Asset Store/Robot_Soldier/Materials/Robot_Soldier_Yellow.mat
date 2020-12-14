@@ -1,0 +1,143 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Robot_Soldier_Yellow
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _DEMO_ON _EMISSION _METALLICGLOSSMAP _NORMALMAP _SPECGLOSSMAP
+    _USETEXTURE_ON
+  m_LightmapFlags: 1
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BaseTexture:
+        m_Texture: {fileID: 2800000, guid: 48ac2fbe689566a4c8fd02ee4cf103d5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: b47c75e7b1292d74196fe79571385183, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 2800000, guid: b340c046c6ef39c4db206baeb9b7ac7a, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LightcapTexture:
+        m_Texture: {fileID: 2800000, guid: a2e8e8b11dc7a4621b9980e2de37bac4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 48ac2fbe689566a4c8fd02ee4cf103d5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 2800000, guid: 75f5477ccd7caf44581ab20788ee8290, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 2800000, guid: 8c006ec7e7943be43b8afb3f8df57800, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Ramp:
+        m_Texture: {fileID: 2800000, guid: a2e8e8b11dc7a4621b9980e2de37bac4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SpecGlossMap:
+        m_Texture: {fileID: 2800000, guid: ce7e0e6714e3af347986b8c775a4ad60, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ToonShade:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Background: 0
+    - _BumpScale: 1
+    - _Cutoff: 0.5
+    - _Demo: 1
+    - _DetailNormalMapScale: 1
+    - _DetailPower: 0.2
+    - _DstBlend: 0
+    - _GlossMapScale: 0.7
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _LightcapAngle: 0.5
+    - _LightcapColors: 0
+    - _LightcapPower: 1
+    - _Metallic: 0
+    - _Mode: 0
+    - _NormalPower: 0.5
+    - _OcclusionStrength: 1
+    - _Outline: 0.1
+    - _OutlineWidth: 0.03
+    - _Parallax: 0.02
+    - _RealtimeShadows: 0
+    - _RimMax: 1
+    - _RimMin: 1
+    - _ShadowMap: 0
+    - _Shadows: 0
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 1
+    - _TintPower: 0.84
+    - _TonesBlend: 0.5
+    - _UVSec: 0
+    - _Usedetail: 0
+    - _Usenormal: 0
+    - _Usetexture: 1
+    - _Usetint: 0
+    - _ZWrite: 1
+    - __dirty: 1
+    m_Colors:
+    - _BlackTones: {r: 0, g: 0, b: 0, a: 1}
+    - _BrightTones: {r: 0.9843137, g: 0, b: 0.02745098, a: 1}
+    - _Color: {r: 1, g: 1, b: 0, a: 1}
+    - _DarkTones: {r: 0.0627451, g: 0.4784314, b: 0.4745098, a: 1}
+    - _EmissionColor: {r: 0.8513882, g: 0.8603976, b: 0.20271148, a: 1}
+    - _HColor: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
+    - _MidTones: {r: 0.4705882, g: 0.4509804, b: 0.4627451, a: 1}
+    - _OutlineColor: {r: 0, g: 0, b: 0, a: 1}
+    - _RimColor: {r: 0.8, g: 0.8, b: 0.8, a: 0.6}
+    - _SColor: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
+    - _ShadowMapColor: {r: 0, g: 0, b: 0, a: 0}
+    - _TintColor: {r: 0.5019608, g: 0.5019608, b: 0.5019608, a: 0}
+    - _WhiteTones: {r: 0.3607843, g: 1, b: 0.3176471, a: 1}
+  m_BuildTextureStacks: []
