@@ -31,7 +31,7 @@ public class PanelGameOver : Panel
         Opened += PanelGameOver_Opened;
     }
 
-    void PanelGameOver_Opened()
+    private void PanelGameOver_Opened()
     {
         gameOverMusic.Play();
 

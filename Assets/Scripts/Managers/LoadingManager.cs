@@ -23,7 +23,7 @@ public class LoadingManager : MonoBehaviour
     [SerializeField]
     private int sceneToLoad = -1; //If -1 = net scene, else load that scene number
 
-    void Start()
+    private void Start()
     {
         Time.timeScale = 1;
         Input.ResetInputAxes(); //Reset the input for 1 frame
@@ -48,7 +48,7 @@ public class LoadingManager : MonoBehaviour
         ready = true; //We call this function when we are ready to load the next scene.
     }
 
-    void Update()
+    private void Update()
     {
 
         if (waitForUserInput && Input.anyKey)

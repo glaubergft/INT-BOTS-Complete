@@ -8,18 +8,18 @@ public class Projectile : MonoBehaviour
     #region Serialized Fields
 
     [SerializeField]
-    float speed = 100;
+    private float speed = 100;
 
     [SerializeField]
-    GameObject impactFx;
+    private GameObject impactFx;
 
     #endregion
 
     #region Private Variables
 
-        string projectileId = string.Empty;
+    private string projectileId = string.Empty;
 
-        int actorNumber = -1;
+    private int actorNumber = -1;
 
     #endregion
 
@@ -43,7 +43,7 @@ public class Projectile : MonoBehaviour
 
     
 
-    void Update()
+    private void Update()
     {
         transform.position += transform.forward * speed * Time.deltaTime;
     }
@@ -62,7 +62,7 @@ public class Projectile : MonoBehaviour
         ManageImpact();
     }
 
-    void ManageImpact()
+    private void ManageImpact()
     {
         Instantiate(impactFx, transform.position, Quaternion.identity);
         Destroy(gameObject);

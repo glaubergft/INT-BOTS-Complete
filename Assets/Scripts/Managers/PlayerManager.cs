@@ -7,29 +7,27 @@ public class PlayerManager : MonoBehaviour
     #region Serialized Fields
 
     [SerializeField]
-    Transform spawnLocations;
+    private Transform spawnLocations;
 
     #endregion
 
     #region Private Variables
 
-    PhotonView view;
+    private PhotonView view;
 
     #endregion
 
-    void Awake()
+    private void Awake()
     {
         view = GetComponent<PhotonView>();
     }
 
-    void Start()
+    private void Start()
     {
         if (view.IsMine)
         {
             string prefabName = Path.Combine("MultiplayerPrefabs", "Player");
 
-            //string spawnName = $"Spawn{ActorNumber()}";
-            //var spawn = GameObject.Find(spawnName)?.transform;
             var spawn = spawnLocations.GetChild(view.Owner.ActorNumber - 1);
             if (spawn != null)
             {
@@ -37,8 +35,6 @@ public class PlayerManager : MonoBehaviour
                 playerGameObject.GetComponent<CharacterMovement>().InitialRotationY = spawn.eulerAngles.y;
                 playerGameObject.GetComponent<CharacterCustomizer>().UpdateCharacter(Player.SelectedCharacter);
                 FindObjectOfType<GameManager>().MyPlayer = playerGameObject.GetComponent<Player>();
-                //FindObjectOfType<Canvas>().renderMode = RenderMode.ScreenSpaceCamera;
-                //FindObjectOfType<Canvas>().worldCamera = GetComponentInChildren<Camera>();
             }
             else
             {

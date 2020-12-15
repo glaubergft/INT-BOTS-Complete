@@ -14,12 +14,12 @@ public class PanelQuit : Panel
         Closed += PanelQuit_Closed;
     }
 
-    void PanelQuit_Opened()
+    private void PanelQuit_Opened()
     {
         gameManager.EnableMyCharacter(false);
     }
 
-    void PanelQuit_Closed()
+    private void PanelQuit_Closed()
     {
         gameManager.EnableMyCharacter(true);
     }

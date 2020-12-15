@@ -18,7 +18,7 @@ public class csMouseOrbit : MonoBehaviour
     public float CameraDist;
 
     // Use this for initialization
-    void Start()
+    private void Start()
     {
         Vector3 angles = transform.eulerAngles;
         x = angles.x;
@@ -30,7 +30,7 @@ public class csMouseOrbit : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    private void LateUpdate()
     {
         if (Target)
         {

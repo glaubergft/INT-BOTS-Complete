@@ -10,7 +10,7 @@ public class CharacterCustomizer : MonoBehaviour
 
     private PhotonView view;
 
-    void Awake()
+    private void Awake()
     {
         view = GetComponent<PhotonView>();
         characterRepository = FindObjectOfType<CharacterRepository>();

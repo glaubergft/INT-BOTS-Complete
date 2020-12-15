@@ -8,7 +8,7 @@ public class DestroyByExpiration : MonoBehaviour
     float lifeTime = 5;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         StartCoroutine(ExpireCheck());
     }

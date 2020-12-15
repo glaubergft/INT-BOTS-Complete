@@ -31,62 +31,62 @@ public class CharacterMovement : MonoBehaviour
     private float slopeCheckRayLength = 0.2f;
 
     [SerializeField]
-    float sensitivityX;
+    private float sensitivityX;
 
     [SerializeField]
-    float sensitivityY;
+    private float sensitivityY;
 
     [SerializeField]
-    Transform myCameraRail = null;
+    private Transform myCameraRail = null;
 
     [SerializeField]
-    Transform myCamera = null;
+    private Transform myCamera = null;
 
     [SerializeField]
-    Transform robotHips = null;
+    private Transform robotHips = null;
 
     [SerializeField]
-    float smoothZoom = 2f;
+    private float smoothZoom = 2f;
 
     [SerializeField]
-    AudioClip jumpSFX;
+    private AudioClip jumpSFX;
 
     [SerializeField]
-    AudioClip landedSFX;
+    private AudioClip landedSFX;
 
     [SerializeField]
-    bool TEST_ARENA = false;
+    private bool TEST_ARENA = false;
 
     #endregion
 
     #region Private Variables
 
-    float leavingGroundMoment = 0;
+    private float leavingGroundMoment = 0;
 
-    CharacterController characterController;
+    private CharacterController characterController;
 
-    bool isJumping = false;
+    private bool isJumping = false;
 
-    Vector3 cachedRotation;
+    private Vector3 cachedRotation;
 
-    Transform originalCameraPos;
+    private Transform originalCameraPos;
 
-    PhotonView view;
+    private PhotonView view;
 
-    AudioSource audioSource;
+    private AudioSource audioSource;
 
     #endregion
 
 
     internal float InitialRotationY = 0;
 
-    void Awake()
+    private void Awake()
     {
         view = GetComponent<PhotonView>();
         audioSource = GetComponent<AudioSource>();
     }
 
-    void Start()
+    private void Start()
     {
         inputVec = new Vector3(0, 0, 0);
 
@@ -120,7 +120,7 @@ public class CharacterMovement : MonoBehaviour
         Cursor.visible = true;
     }
 
-    void Update()
+    private void Update()
     {
         if (!view.IsMine && TEST_ARENA == false)
         {
@@ -131,7 +131,7 @@ public class CharacterMovement : MonoBehaviour
         UpdateRotation();
     }
 
-    void UpdatePosition()
+    private void UpdatePosition()
     {
         bool onSlope = OnSlope();
 
@@ -191,7 +191,7 @@ public class CharacterMovement : MonoBehaviour
         characterController.Move(inputVec * Time.deltaTime);
     }
 
-    void UpdateRotation()
+    private void UpdateRotation()
     {
         float rotationY = Input.GetAxis("Mouse Y") * sensitivityX;
         float rotationX = Input.GetAxis("Mouse X") * sensitivityY;
@@ -208,7 +208,7 @@ public class CharacterMovement : MonoBehaviour
 
     }
 
-    void DetectObstructedView()
+    private void DetectObstructedView()
     {
         RaycastHit hit;
         float distance = Vector3.Distance(originalCameraPos.position, robotHips.position);

@@ -26,7 +26,7 @@ public class StartManager : MonoBehaviour
 
     private bool loadingGame = false;
 
-    void Start()
+    private void Start()
     {
         PickRandomCharacter();
     }
@@ -81,6 +81,8 @@ public class StartManager : MonoBehaviour
     public void LoadGameScene()
     {
         if (loadingGame) { return; }
+
+        PhotonNetwork.CurrentRoom.IsOpen = false;
         loadingGame = true;
         StartCoroutine(LoadGameScene_Coroutine());
     }

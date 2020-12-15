@@ -9,12 +9,12 @@ public class CameraAim : MonoBehaviour
     [SerializeField]
     private Transform target;
 
-    void Start()
+    private void Start()
     {
         cam = GetComponent<Camera>();
     }
 
-    void Update()
+    private void Update()
     {
         var pos = Input.mousePosition;
         var ray = cam.ScreenPointToRay(pos);

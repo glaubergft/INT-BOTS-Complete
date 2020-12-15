@@ -17,7 +17,7 @@ namespace Photon.Pun.UtilityScripts
 	public class OnPointerOverTooltip : MonoBehaviour,IPointerEnterHandler,IPointerExitHandler
 	{
 
-	    void OnDestroy()
+	    private void OnDestroy()
 	    {
 	        PointedAtGameObjectInfo.Instance.RemoveFocus(this.GetComponent<PhotonView>());
 	    }

@@ -9,33 +9,33 @@ public class CharacterGun : MonoBehaviourPun
     #region Serialized Fields
 
     [SerializeField]
-    Transform characterCamera;
+    private Transform characterCamera;
 
     [SerializeField]
-    Transform launcher;
+    private Transform launcher;
 
     [SerializeField]
-    GameObject projectile;
+    private GameObject projectile;
 
     [SerializeField]
-    float fireRate = 0.25f;
+    private float fireRate = 0.25f;
 
     #endregion
 
     #region Private Variables
 
-    float lastFire = 0;
+    private float lastFire = 0;
 
-    PhotonView view;
+    private PhotonView view;
 
     #endregion
 
-    void Awake()
+    private void Awake()
     {
         view = GetComponent<PhotonView>();
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetButton("Fire1") && lastFire + fireRate <= Time.time)
         {

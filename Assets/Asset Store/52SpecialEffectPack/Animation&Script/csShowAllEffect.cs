@@ -9,12 +9,12 @@ public class csShowAllEffect : MonoBehaviour
     public Text Text1;
     public int i = 0;
 
-    void Start()
+    private void Start()
     {
         Instantiate(Effect[i], new Vector3(0, 0, 0), Quaternion.identity);
     }
 
-    void Update ()
+    private void Update ()
     {
         Text1.text = i + 1 + ":" + EffectName[i];
 

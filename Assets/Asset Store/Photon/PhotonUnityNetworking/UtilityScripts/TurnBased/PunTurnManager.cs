@@ -134,9 +134,9 @@ namespace Photon.Pun.UtilityScripts
         #region MonoBehaviour CallBack
 
 
-        void Start(){}
+        private void Start(){}
 
-        void Update()
+        private void Update()
         {
             if (Turn > 0 && this.IsOver && !_isOverCallProcessed)
             {

@@ -2534,6 +2534,101 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 742224995}
   m_CullTransparentMesh: 0
+--- !u!1 &754059457
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 754059458}
+  - component: {fileID: 754059461}
+  - component: {fileID: 754059460}
+  - component: {fileID: 754059459}
+  m_Layer: 5
+  m_Name: fps
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &754059458
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754059457}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.00018582892}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2593726771385561711}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: -0.00024414062, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0, y: 1}
+--- !u!114 &754059459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754059457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d258f8b46e80f041a55ccab8b962440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fpsText: {fileID: 754059460}
+  deltaTime: 0
+  threshold: 15
+--- !u!114 &754059460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754059457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.21568628}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &754059461
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754059457}
+  m_CullTransparentMesh: 0
 --- !u!82 &785540932 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 7637461127551942099, guid: 9598570fbab339048a17c8aebddb5508, type: 3}
@@ -3869,29 +3964,31 @@ MonoBehaviour:
 
     Glauber Torres
 
+    github.com/glaubergft/INT-BOTS-Complete
+
 
     Assets:
 
-    Arcade #10 by ADHMusic
+    Arcade
+    #10 by ADHMusic
 
-    Robot
-    Soldier by Marcelo Barrio
+    Robot Soldier by Marcelo Barrio
 
-    Free LowPoly SciFi Pack by Cuboom
+    Free LowPoly SciFi
+    Pack by Cuboom
 
-    Dark Future
-    Music by Daniel Gooding
+    Dark Future Music by Daniel Gooding
 
-    SCI-FI User Interface SFX by Sound Works 12
+    SCI-FI User Interface
+    SFX by Sound Works 12
 
-    Photon
-    Unity Networking Classic by Exit Games
+    Photon Unity Networking Classic by Exit Games
 
 
-    Special Thanks:
+    Special
+    Thanks:
 
-    Innovators
-    in Technology - INT - int4fc.com'
+    Innovators in Technology - INT - int4fc.com'
 --- !u!222 &1338895900
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6080,7 +6177,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Loading...
+  m_Text: Left Room
 --- !u!222 &1698037429
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11045,6 +11142,7 @@ RectTransform:
   - {fileID: 1544634282}
   - {fileID: 1154811813}
   - {fileID: 1044613967}
+  - {fileID: 754059458}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11201,10 +11299,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2593726771385561711}
     m_Modifications:
-    - target: {fileID: 2961085432913812413, guid: d58febde123e1e14db67393e4ddd8065, type: 3}
-      propertyPath: m_Alpha
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2961085432913812414, guid: d58febde123e1e14db67393e4ddd8065, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -11215,7 +11309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2961085432913812414, guid: d58febde123e1e14db67393e4ddd8065, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2961085432913812414, guid: d58febde123e1e14db67393e4ddd8065, type: 3}
       propertyPath: m_AnchorMax.x
@@ -11292,10 +11386,6 @@ PrefabInstance:
     - target: {fileID: 2961085432913812415, guid: d58febde123e1e14db67393e4ddd8065, type: 3}
       propertyPath: m_Name
       value: PanelFadeBlack
-      objectReference: {fileID: 0}
-    - target: {fileID: 2961085432913812415, guid: d58febde123e1e14db67393e4ddd8065, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d58febde123e1e14db67393e4ddd8065, type: 3}
@@ -11442,7 +11532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5959436408539061419, guid: 0e84df502daa814468355db772765add, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 5959436408539061419, guid: 0e84df502daa814468355db772765add, type: 3}
       propertyPath: m_AnchorMax.x

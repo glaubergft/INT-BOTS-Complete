@@ -12,13 +12,13 @@ public class HeadController : MonoBehaviour
     public Transform lookObj = null;
     public float lookWeight = 2f;
 
-    void Start()
+    private void Start()
     {
         animator = GetComponent<Animator>();
     }
 
     //a callback for calculating IK
-    void OnAnimatorIK()
+    private void OnAnimatorIK()
     {
 
         if (animator)

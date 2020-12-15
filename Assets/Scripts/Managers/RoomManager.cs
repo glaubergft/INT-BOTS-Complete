@@ -12,7 +12,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
 
     internal static byte MaxPlayers = 2;
 
-    void Awake()
+    private void Awake()
     {
         if (Instance != null)
         {
@@ -45,7 +45,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         }
     }
 
-    void Start()
+    private void Start()
     {
         Connect();
     }
@@ -117,7 +117,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         Display("Left Room");
     }
 
-    void Display(string info)
+    private void Display(string info)
     {
         Debug.Log(info + " - PhotonNetwork.NetworkClientState:" + PhotonNetwork.NetworkClientState.ToString());
         if (Panel.Find<PanelConnect>() != null)
@@ -126,11 +126,10 @@ public class RoomManager : MonoBehaviourPunCallbacks
         }
     }
 
-    void CheckGameStart()
+    private void CheckGameStart()
     {
         if (PhotonNetwork.PlayerList.Length == MaxPlayers) //MaxPlayers
         {
-            print("CheckGameStart() - PhotonNetwork.NetworkClientState:" + PhotonNetwork.NetworkClientState.ToString());
             FindObjectOfType<StartManager>().LoadGameScene();
         }
     }

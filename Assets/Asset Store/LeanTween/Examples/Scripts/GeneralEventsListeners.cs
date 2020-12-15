@@ -54,7 +54,7 @@ public class GeneralEventsListeners : MonoBehaviour {
 			towardsRotation = new Vector3(0f, Random.Range(-180, 180), 0f);
     }
 
-     void OnCollisionStay(Collision collision) {
+     private void OnCollisionStay(Collision collision) {
      	if(collision.gameObject.layer!=2){
      		turnForIter = 0f;
 	    	turnForLength = Random.Range(0.5f, 1.5f);

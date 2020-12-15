@@ -32,7 +32,7 @@ namespace Photon.Pun
 #if UNITY_EDITOR
 
         [ContextMenu("Open PUN Wizard")]
-        void OpenPunWizard()
+        private void OpenPunWizard()
         {
             EditorApplication.ExecuteMenuItem("Window/Photon Unity Networking/PUN Wizard");
         }

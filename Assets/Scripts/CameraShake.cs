@@ -31,7 +31,7 @@ public class CameraShake : MonoBehaviour
         transform.localPosition = originalPos;
     }
 
-    void Update()
+    private void Update()
     {
         if (shakeSpentTime > 0)
         {

@@ -7,7 +7,7 @@ public class FullscreenManager : MonoBehaviour
 {
     
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         GetComponent<Toggle>().isOn = SavedOption();
     }

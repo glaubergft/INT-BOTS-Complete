@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(CanvasGroup))]
+[RequireComponent(typeof(Image))]
 public class PanelFade : MonoBehaviour
 {
     public enum FadeState
@@ -13,11 +14,11 @@ public class PanelFade : MonoBehaviour
         FadeOut
     }
 
-    [SerializeField]
-    private Image backgroundImage;
+    //[SerializeField]
+    //private Image backgroundImage;
 
-    [SerializeField]
-    private Color color;
+    //[SerializeField]
+    //private Color color;
 
     public float duration;
 
@@ -38,9 +39,9 @@ public class PanelFade : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        backgroundImage.color = color;
+        //backgroundImage.color = color;
         if (startState == FadeState.FadeIn)
         {
             FadeIn();
@@ -72,7 +73,7 @@ public class PanelFade : MonoBehaviour
         gameObject.SetActive(false);
     }
 
-    void Initialize()
+    private void Initialize()
     {
         gameObject.SetActive(true);
         if (audioAction != null)

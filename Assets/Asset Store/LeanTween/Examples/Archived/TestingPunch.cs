@@ -148,24 +148,24 @@ public class TestingPunch : MonoBehaviour {
         }, 0f, 1f, 1f);
     }
 
-    void enterMiniGameStart( object val ){
+    private void enterMiniGameStart( object val ){
         object[] arr = (object [])val;
         int lvl = int.Parse((string)arr[0]);
         Debug.Log("level:"+lvl);
     }
 
-    void updateColor( Color c ){
+    private void updateColor( Color c ){
         GameObject l = GameObject.Find("LCharacter");
         // Debug.Log("new col:"+c);
         l.GetComponent<Renderer>().material.color = c;
     }
 
-    void delayedMethod( object myVal ){
+    private void delayedMethod( object myVal ){
         string castBack = myVal as string;
         Debug.Log("delayed call:"+Time.time +" myVal:"+castBack);
     }
 
-    void destroyOnComp( object p ){
+    private void destroyOnComp( object p ){
       GameObject g = (GameObject)p;
       Destroy( g );
     }

@@ -26,47 +26,47 @@ public class Player : MonoBehaviour
     #region Serialized Fields
 
     [SerializeField]
-    CameraShake cameraShakeObj;
+    private CameraShake cameraShakeObj;
 
     [SerializeField]
-    Color emissionColorWhenHit;
+    private Color emissionColorWhenHit;
 
     [SerializeField]
-    GameObject deathExplosionFX;
+    private GameObject deathExplosionFX;
 
     [SerializeField]
-    GameObject spawnFX;
+    private GameObject spawnFX;
 
     [SerializeField]
-    Transform spawnLocations;
+    private Transform spawnLocations;
 
     [SerializeField]
-    AudioSource reloadHealthBar;
+    private AudioSource reloadHealthBar;
 
     [SerializeField]
-    Transform playerLabel;
+    private Transform playerLabel;
 
     #endregion
 
     #region Private Variables
 
-    Renderer[] rendererArray;
+    private Renderer[] rendererArray;
 
-    Renderer[] customRendererArray;
+    private Renderer[] customRendererArray;
 
-    Dictionary<string, Color> emissionColorDic = new Dictionary<string, Color>();
+    private Dictionary<string, Color> emissionColorDic = new Dictionary<string, Color>();
 
-    Dictionary<string, Texture> emissionTextureDic = new Dictionary<string, Texture>();
+    private Dictionary<string, Texture> emissionTextureDic = new Dictionary<string, Texture>();
 
-    GameManager gameManagerObj;
+    private GameManager gameManagerObj;
 
-    const int maxHealth = 10;
+    private const int maxHealth = 10;
 
-    int health = maxHealth;
+    private int health = maxHealth;
 
-    PhotonView view;
+    private PhotonView view;
 
-    HashSet<string> takenHits = new HashSet<string>();
+    private HashSet<string> takenHits = new HashSet<string>();
 
     #endregion
 
@@ -78,13 +78,13 @@ public class Player : MonoBehaviour
         }
     }
 
-    void Awake()
+    private void Awake()
     {
         gameManagerObj = FindObjectOfType<GameManager>();
         view = GetComponent<PhotonView>();
     }
 
-    void Start()
+    private void Start()
     {
         if (PhotonNetwork.InRoom)
         {
@@ -103,12 +103,12 @@ public class Player : MonoBehaviour
         SaveMaterialState();
     }
 
-    void SetPlayerLabel(string nickName)
+    private void SetPlayerLabel(string nickName)
     {
         playerLabel.GetComponent<TextMesh>().text = nickName;
     }
 
-    void SaveMaterialState()
+    private void SaveMaterialState()
     {
         rendererArray = GetComponentsInChildren<Renderer>();
         customRendererArray = GetComponentsInChildren<Renderer>().Where(x => x.tag != "IgnoreCustomization").ToArray();
@@ -131,11 +131,16 @@ public class Player : MonoBehaviour
 
     internal void TakeHit(Projectile projectileObj, HitType hitType)
     {
-        TakeHit(projectileObj.ProjectileId, projectileObj.ActorNumber, hitType);
+        TakeHit(projectileObj.ProjectileId, projectileObj.ActorNumber, hitType, false);
     }
 
-    void TakeHit(string projectileId, int projectileAuthorActorNumber, HitType hitType)
+    private void TakeHit(string projectileId, int projectileAuthorActorNumber, HitType hitType, bool broadcasting)
     {
+        StartCoroutine(TakeHit_FX());
+
+        if (!view.IsMine && !broadcasting)
+            return;
+        
         if (takenHits.Contains(projectileId))
             return;
 
@@ -146,14 +151,14 @@ public class Player : MonoBehaviour
 
         gameManagerObj?.ComputeScoreHit(projectileAuthorActorNumber, hitType);
         cameraShakeObj?.Shake();
-        StartCoroutine(TakeHit_FX());
+        
         ReduceHealth(hitType);
     }
 
     [PunRPC]
-    void BroadcastHit(string projectileId, int projectileAuthorActorNumber, HitType hitType)
+    private void BroadcastHit(string projectileId, int projectileAuthorActorNumber, HitType hitType)
     {
-        TakeHit(projectileId, projectileAuthorActorNumber, hitType);
+        TakeHit(projectileId, projectileAuthorActorNumber, hitType, true);
     }
 
     IEnumerator TakeHit_FX()
@@ -182,7 +187,7 @@ public class Player : MonoBehaviour
         takenHits.Remove(projectileId);
     }
 
-    void ReduceHealth(HitType hitType)
+    private void ReduceHealth(HitType hitType)
     {
         int hitPoints = gameManagerObj.ReturnPointsPerHitType(hitType);
         health -= hitPoints;
@@ -258,7 +263,7 @@ public class Player : MonoBehaviour
     }
 
     [PunRPC]
-    void RespawnStep2()
+    private void RespawnStep2()
     {
         StartCoroutine(RespawnStep3());
     }
@@ -279,6 +284,8 @@ public class Player : MonoBehaviour
 
         yield return new WaitForSeconds(reloadDelayInSecods + 0.25f);
 
+        rendererArray.ToList().ForEach(x => x.enabled = true);
+
         if (IsMine) GetComponent<CharacterGun>().enabled = true;
 
         health = maxHealth;
@@ -287,7 +294,7 @@ public class Player : MonoBehaviour
         GetComponentsInChildren<CharacterCollider>().ToList().ForEach(x => x.GetComponent<Collider>().enabled = true);
     }
 
-    void ReloadHealth(float value, float ratio)
+    private void ReloadHealth(float value, float ratio)
     {
         reloadHealthBar.pitch = value;
 

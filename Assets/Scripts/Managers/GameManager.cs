@@ -14,51 +14,51 @@ public class GameManager : MonoBehaviour
     #region Serialized Fields
 
     [SerializeField]
-    int pointsForHeadShot = 3;
+    private int pointsForHeadShot = 3;
 
     [SerializeField]
-    int pointsForBodyShot = 1;
+    private int pointsForBodyShot = 1;
 
     [SerializeField]
-    int matchDurationInSeconds = 0;
+    private int matchDurationInSeconds = 0;
 
     [SerializeField]
-    Image healthBar;
+    private Image healthBar;
 
     [SerializeField]
-    Text txtTimeLeft;
+    private Text txtTimeLeft;
 
     [SerializeField]
-    Text[] leaderboardNickname;
+    private Text[] leaderboardNickname;
 
     [SerializeField]
-    Text[] leaderboardScore;
+    private Text[] leaderboardScore;
 
     [SerializeField]
-    AudioSource buttonClickSFX;
+    private AudioSource buttonClickSFX;
 
     [SerializeField]
-    AudioSource buzzerSFX;
+    private AudioSource buzzerSFX;
 
     [SerializeField]
-    AudioSource alarmSFX;
+    private AudioSource alarmSFX;
 
     [SerializeField]
-    AudioSource gameTheme;
+    private AudioSource gameTheme;
 
     [SerializeField]
-    GameObject disableCamera;
+    private GameObject disableCamera;
 
     [SerializeField]
-    PanelFade panelFadeBlackTransition;
+    private PanelFade panelFadeBlackTransition;
 
     #endregion
 
     #region Private Variables
 
-    Dictionary<int, PlayerData> playerDictionary = new Dictionary<int, PlayerData>();
+    private Dictionary<int, PlayerData> playerDictionary = new Dictionary<int, PlayerData>();
 
-    bool gameOn = true;
+    private bool gameOn = true;
 
     #endregion
 
@@ -66,12 +66,12 @@ public class GameManager : MonoBehaviour
 
     class PlayerData
     {
-        public int ActorNumber { get; set; }
-        public Player Player { get; set; }
-        public Text NicknameControl { get; set; }
-        public Text ScoreControl { get; set; }
+        internal int ActorNumber { get; set; }
+        internal Player Player { get; set; }
+        internal Text NicknameControl { get; set; }
+        internal Text ScoreControl { get; set; }
         private int score;
-        public int Score
+        internal int Score
         {
             get
             {
@@ -91,24 +91,24 @@ public class GameManager : MonoBehaviour
         ClearLeaaderboard();
     }
 
-    void ClearLeaaderboard()
+    private void ClearLeaaderboard()
     {
         leaderboardNickname.ToList().ForEach(x => x.text = string.Empty);
         leaderboardScore.ToList().ForEach(x => x.text = string.Empty);
     }
 
-    void Start()
+    private void Start()
     {
         disableCamera.SetActive(false);
         InvokeRepeating(nameof(UpdateTimer), 0, 1);
     }
 
-    void Update()
+    private void Update()
     {
         CheckInput();
     }
 
-    void CheckInput()
+    private void CheckInput()
     {
         if (Input.GetButtonDown("Cancel") && Panel.CheckAllPanelsAreClosed())
         {
@@ -117,7 +117,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void UpdateTimer()
+    private void UpdateTimer()
     {
         matchDurationInSeconds--;
         txtTimeLeft.text = TimeSpan.FromSeconds(matchDurationInSeconds).ToString(@"mm\:ss");
@@ -134,7 +134,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void TimesUp()
+    private void TimesUp()
     {
         CleanupForFinish();
         buzzerSFX.Play();
@@ -154,7 +154,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Loading");
     }
 
-    void CleanupForFinish()
+    private void CleanupForFinish()
     {
         gameOn = false;
         PhotonNetwork.Disconnect();
@@ -227,7 +227,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void UpdateScoreboardRank()
+    private void UpdateScoreboardRank()
     {
         IEnumerable<PlayerData> playerList = playerDictionary.Values.OrderByDescending(x => x.Score);
         int i = 0;

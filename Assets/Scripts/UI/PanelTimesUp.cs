@@ -16,7 +16,7 @@ public class PanelTimesUp : Panel
         Opened += PanelTimesUp_Opened;
     }
 
-    void PanelTimesUp_Opened()
+    private void PanelTimesUp_Opened()
     {
         LeanTween.scale(gameObject, Vector3.one * 0.5f, waitSecondsForGameOver - 0.5f).setEase(LeanTweenType.punch);
         StartCoroutine(PanelTimesUp_Opened_Coroutine());

@@ -103,12 +103,12 @@ namespace Photon.Pun.UtilityScripts
     //[CustomEditor(typeof(ConnectAndJoinRandom), true)]
     //public class ConnectAndJoinRandomInspector : Editor
     //{
-    //    void OnEnable() { EditorApplication.update += Update; }
-    //    void OnDisable() { EditorApplication.update -= Update; }
+    //    private void OnEnable() { EditorApplication.update += Update; }
+    //    private void OnDisable() { EditorApplication.update -= Update; }
 
     //    bool isConnectedCache = false;
 
-    //    void Update()
+    //    private void Update()
     //    {
     //        if (this.isConnectedCache != PhotonNetwork.IsConnected)
     //        {

@@ -12,13 +12,13 @@ public class CharacterFootStep : MonoBehaviour
     [SerializeField]
     AudioSource audioSource;
     
-    void Awake()
+    private void Awake()
     {
         audioSource = GetComponent<AudioSource>();
     }
 
     
-    void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         audioSource.PlayOneShot(audioClip);
     }
