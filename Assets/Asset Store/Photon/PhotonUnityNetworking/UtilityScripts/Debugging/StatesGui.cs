@@ -36,7 +36,7 @@ namespace Photon.Pun.UtilityScripts
         private Rect GuiRect = new Rect();
         private static StatesGui Instance;
 
-        private void Awake()
+        void Awake()
         {
             if (Instance != null)
             {
@@ -55,7 +55,7 @@ namespace Photon.Pun.UtilityScripts
             }
         }
 
-        private void OnDisable()
+        void OnDisable()
         {
             if (DontDestroy && Instance == this)
             {
@@ -66,7 +66,7 @@ namespace Photon.Pun.UtilityScripts
 
         float native_width = 800;
         float native_height = 480;
-        private void OnGUI()
+        void OnGUI()
         {
             if (PhotonNetwork.NetworkingClient == null || PhotonNetwork.NetworkingClient.LoadBalancingPeer == null || PhotonNetwork.NetworkingClient.LoadBalancingPeer.TrafficStatsIncoming == null)
             {

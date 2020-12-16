@@ -1336,11 +1336,11 @@
              </summary>
              <remarks>
              Get this value directly in OnEvent() or OnOperationResponse(). Example:
-             private void OnEvent(...) {
+             void OnEvent(...) {
                int eventSizeInBytes = this.peer.ByteCountCurrentDispatch;
                //...
             
-             private void OnOperationResponse(...) {
+             void OnOperationResponse(...) {
                int resultSizeInBytes = this.peer.ByteCountCurrentDispatch;
                //...
              </remarks>

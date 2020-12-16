@@ -1158,7 +1158,7 @@ namespace Photon.Chat
         }
 
         #if SDK_V4
-        private void IPhotonPeerListener.OnMessage(object msg)
+        void IPhotonPeerListener.OnMessage(object msg)
         {
             string channelName = null;
             var receivedBytes = (byte[])msg;

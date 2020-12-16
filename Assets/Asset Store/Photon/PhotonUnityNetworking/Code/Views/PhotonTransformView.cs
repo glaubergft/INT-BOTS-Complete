@@ -40,7 +40,7 @@ namespace Photon.Pun
             m_NetworkRotation = Quaternion.identity;
         }
 
-        private void OnEnable()
+        void OnEnable()
         {
             m_firstTake = true;
         }

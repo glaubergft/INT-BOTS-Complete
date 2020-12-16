@@ -110,7 +110,7 @@ namespace Photon.Chat
         /// <param name="channel">Channel name in which the properties have changed</param>
         /// <param name="senderUserId">The UserID of the user who changed the properties</param>
         /// <param name="properties">The properties that have changed</param>
-        private void OnChannelPropertiesChanged(string channel, string senderUserId, Dictionary<object, object> properties);
+        void OnChannelPropertiesChanged(string channel, string senderUserId, Dictionary<object, object> properties);
 
         /// <summary>
         /// Properties of a user in a public channel has been changed
@@ -119,7 +119,7 @@ namespace Photon.Chat
         /// <param name="targetUserId">The UserID whom properties have changed</param>
         /// <param name="senderUserId">The UserID of the user who changed the properties</param>
         /// <param name="properties">The properties that have changed</param>
-        private void OnUserPropertiesChanged(string channel, string targetUserId, string senderUserId, Dictionary<object, object> properties);
+        void OnUserPropertiesChanged(string channel, string targetUserId, string senderUserId, Dictionary<object, object> properties);
 
         /// <summary>
         /// The server uses error events to make the client aware of some issues.
@@ -130,7 +130,7 @@ namespace Photon.Chat
         /// <param name="channel">The name of the channel in which this error info has been received</param>
         /// <param name="error">The text message of the error info</param>
         /// <param name="data">Optional error data</param>
-        private void OnErrorInfo(string channel, string error, object data);
+        void OnErrorInfo(string channel, string error, object data);
         
         #endif
 
@@ -141,7 +141,7 @@ namespace Photon.Chat
         /// </summary>
         /// <param name="channel">Name of the chat channel</param>
         /// <param name="message">Message data</param>
-        private void OnReceiveBroadcastMessage(string channel, byte[] message);
+        void OnReceiveBroadcastMessage(string channel, byte[] message);
         #endif
 
     }

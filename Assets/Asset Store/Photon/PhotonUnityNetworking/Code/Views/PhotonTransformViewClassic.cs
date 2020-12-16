@@ -53,7 +53,7 @@ namespace Photon.Pun
         /// </summary>
         bool m_firstTake = false;
 
-        private void Awake()
+        void Awake()
         {
             this.m_PhotonView = GetComponent<PhotonView>();
 
@@ -62,12 +62,12 @@ namespace Photon.Pun
             this.m_ScaleControl = new PhotonTransformViewScaleControl(this.m_ScaleModel);
         }
 
-        private void OnEnable()
+        void OnEnable()
         {
             m_firstTake = true;
         }
 
-        private void Update()
+        void Update()
         {
             if (this.m_PhotonView == null || this.m_PhotonView.IsMine == true || PhotonNetwork.IsConnectedAndReady == false)
             {
@@ -79,7 +79,7 @@ namespace Photon.Pun
             this.UpdateScale();
         }
 
-        private void UpdatePosition()
+        void UpdatePosition()
         {
             if (this.m_PositionModel.SynchronizeEnabled == false || this.m_ReceivedNetworkUpdate == false)
             {
@@ -89,7 +89,7 @@ namespace Photon.Pun
             transform.localPosition = this.m_PositionControl.UpdatePosition(transform.localPosition);
         }
 
-        private void UpdateRotation()
+        void UpdateRotation()
         {
             if (this.m_RotationModel.SynchronizeEnabled == false || this.m_ReceivedNetworkUpdate == false)
             {
@@ -99,7 +99,7 @@ namespace Photon.Pun
             transform.localRotation = this.m_RotationControl.GetRotation(transform.localRotation);
         }
 
-        private void UpdateScale()
+        void UpdateScale()
         {
             if (this.m_ScaleModel.SynchronizeEnabled == false || this.m_ReceivedNetworkUpdate == false)
             {
@@ -372,7 +372,7 @@ namespace Photon.Pun
             m_UpdatedPositionAfterOnSerialize = false;
         }
 
-        private void SerializeData(Vector3 currentPosition, PhotonStream stream, PhotonMessageInfo info)
+        void SerializeData(Vector3 currentPosition, PhotonStream stream, PhotonMessageInfo info)
         {
             stream.SendNext(currentPosition);
             m_NetworkPosition = currentPosition;
@@ -385,7 +385,7 @@ namespace Photon.Pun
             }
         }
 
-        private void DeserializeData(PhotonStream stream, PhotonMessageInfo info)
+        void DeserializeData(PhotonStream stream, PhotonMessageInfo info)
         {
             Vector3 readPosition = (Vector3)stream.ReceiveNext();
             if (m_Model.ExtrapolateOption == PhotonTransformViewPositionModel.ExtrapolateOptions.SynchronizeValues ||

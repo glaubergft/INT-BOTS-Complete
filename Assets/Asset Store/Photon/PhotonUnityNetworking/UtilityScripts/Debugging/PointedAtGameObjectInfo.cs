@@ -29,7 +29,7 @@ namespace Photon.Pun.UtilityScripts
 
         Transform focus;
 
-        private void Start()
+        void Start()
         {
             if (Instance != null)
             {
@@ -73,7 +73,7 @@ namespace Photon.Pun.UtilityScripts
 
         }
 
-        private void LateUpdate()
+        void LateUpdate()
         {
             if (focus != null)
             {
